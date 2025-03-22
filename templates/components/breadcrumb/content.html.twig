@@ -1,0 +1,19 @@
+<div class="col-12 m-auto mt-3">
+  <div class="card mb-1">
+    <div class="card-body m-0 p-0">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb p-3 m-0">
+          {% block content %}
+            {% for entry in entries %}
+              <twig:breadcrumb:entry
+                :label="entry.label ?? ''"
+                :icon="entry.icon ?? false"
+                :path="entry.path ?? false"
+              />
+            {% endfor %}
+          {% endblock content %}
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+//
+// maps.scss
+//
+
+//Google Maps
+
+.gmaps,
+.gmaps-panaroma {
+    height: 300px;
+    background: var(--#{$prefix}tertiary-bg);
+    border-radius: 3px;
+}
+
+// Vector Map
+
+.jvm-zoom-btn {
+    border: none;
+    background: var(--#{$prefix}tertiary-bg);
+    color: var(--#{$prefix}tertiary-color);
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: bolder;
+}
+
+// zoom in & out btn color
+.jvm-tooltip {
+    border-radius: 3px;
+    background-color: var(--#{$prefix}tertiary-bg);
+    color: var(--#{$prefix}tertiary-color);
+    font-family: $font-family-base;
+    box-shadow: $box-shadow-lg;
+    padding: 5px 9px;
+}
+
+.jvm-container {
+    text {
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        fill: var(--#{$prefix}body-color);
+    }
+}

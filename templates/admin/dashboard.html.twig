@@ -1,0 +1,7 @@
+{% extends 'admin/layout.html.twig' %}
+{% trans_default_domain 'app' %}
+
+{% block pageTitle 'dashboard.welcome'|trans({'%name%': app.user.fullName}) %}
+
+{% block content %}
+{% endblock %}

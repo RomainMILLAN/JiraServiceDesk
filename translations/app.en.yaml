@@ -1,0 +1,287 @@
+action:
+    label: 'Action(s)'
+    logout: 'Logout'
+    create: 'Create'
+    cancel: 'Cancel'
+    save: 'Save'
+    list: 'List'
+    exit: 'Exit'
+    edit: 'Edit'
+    exitImpersonation: 'Stop impersonation'
+    view: 'View'
+    add: 'Add'
+    remove: 'Remove'
+    download: 'Download'
+
+locale:
+    label: 'Language'
+    fr: 'French'
+    en: 'English'
+
+theme:
+    label: 'Color theme'
+    light: 'Light'
+    dark: 'Dark'
+    auto: 'Automatic'
+
+flash:
+    edited: 'The item has been successfully modified.'
+    created: 'The item has been successfully created.'
+    deleted: 'The item has been successfully deleted.'
+    stopped: 'The item has been successfully stopped.'
+    error: 'An error has occurred.'
+
+header:
+    themeMode: 'Color mode'
+    dropdown:
+        welcome: 'Hello!'
+
+title:
+    all: 'Romain MILLAN Finance'
+    short: 'Finance'
+
+dateEnumType:
+    monthly: 'Monthly'
+    yearly: 'Yearly'
+    daily: 'Daily'
+    weekly: 'Weekly'
+    quarterly: 'Quarterly'
+
+list:
+    pagination:
+        previous: 'Previous'
+        next: 'Next'
+        empty: 'Oops, we didn"t find any items.'
+        total: '%number% Result(s)'
+    filter:
+        action: 'Filter'
+
+modal:
+    delete:
+        title: 'Deletion'
+        description: 'By clicking this button, you agree to delete the selected item.'
+        action: 'Confirm'
+    stop:
+        title: 'Process stop'
+        description: 'By clicking this button, you agree to stop the process of the selected item.'
+        action: 'Confirm'
+
+sidebar:
+    categories:
+        navigation: 'Navigation'
+        administration: 'Administration'
+
+filter:
+    query:
+        label: 'Search'
+
+dashboard:
+    label: 'Dashboard'
+    welcome: 'Hello %name%!'
+
+user:
+    label: 'User(s)'
+    email:
+        label: 'Username'
+    password:
+        label: 'Password'
+        notice: '💡 Leave empty to keep unchanged.'
+    firstName:
+        label: 'First name'
+    lastName:
+        label: 'Last name'
+    roles:
+        label: 'Role(s)'
+        role_super_admin: 'SuperAdmin'
+        role_user: 'User'
+    preferedLocale:
+        label: 'Preferred language'
+    preferedTheme:
+        label: 'Preferred color theme'
+    notificationPreferencesRecurrentLineIsCreated:
+        label: 'Notify when a recurring transaction is created'
+    notificationPreferencesRecurrentLineIsStopped:
+        label: 'Notify when a recurring transaction is stopped'
+    phone:
+        label: 'Phone number'
+    signalRecipients:
+        label: 'Signal notification recipient'
+        notice: '💡 Separate with ";".'
+    notificationPreferencesBySignalReceiver:
+        label: 'Signal notification by receiver'
+    notificationPreferencesBySignalPhoneNumber:
+        label: 'Signal notification by phone number'
+    edit:
+        title: 'Editing user "%email%"'
+    create:
+        title: 'Creating a user'
+
+profile:
+    label: 'Profile'
+    view:
+        title: 'My user profile'
+        edit: 'Edit my profile'
+
+account:
+    label: 'Account(s)'
+    name:
+        label: 'Name'
+    create:
+        title: 'Creating an account'
+    edit:
+        title: 'Editing account "%name%"'
+    list:
+        title: 'List of accounts'
+        stats:
+            description: 'Statistics of your accounts'
+    view:
+        title: 'Your account "%name%"'
+        recentActivity:
+            label: 'Recent activity(ies)'
+        stats:
+            description: 'Statistics of your account "%name%"'
+    activities:
+        title: 'Activity(ies) of account %name%'
+        label: 'Activity(ies)'
+    totalAmount:
+        label: 'Account total'
+    potentialTotalAmount:
+        label: 'Potential account total'
+    users:
+        label: 'User(s) with access'
+    utils:
+        allAmountAccount: 'Total assets'
+
+bank:
+    label: 'Bank(s)'
+    name:
+        label: 'Name'
+    edit:
+        title: 'Editing bank "%name%"'
+    create:
+        title: 'Creating a bank'
+
+line-categorie:
+    label: 'Transaction category'
+    name:
+        label: 'Name'
+    edit:
+        title: 'Editing transaction category "%name%"'
+    create:
+        title: 'Creating a transaction category'
+
+line:
+    label: 'Transaction(s)'
+    description:
+        label: 'Description'
+    fromAccount:
+        label: 'Source account'
+    toAccount:
+        label: 'Destination account'
+    amount:
+        label: 'Amount'
+    createdAt:
+        label: 'Created on'
+    validatedAt:
+        label: 'Validated on'
+    dueDate:
+        label: 'Due date'
+    validated:
+        label: 'Is validated'
+    attachments:
+        label: 'Attachment(s)'
+    edit:
+        title: 'Editing transaction #%id%'
+    create:
+        title: 'Creating a transaction'
+        action: 'Create a transaction'
+    view:
+        title: 'Viewing transaction #%id%'
+    utils:
+        lineNotValidated: 'Unvalidated transaction(s)'
+    status:
+        label: 'Status'
+        pending: 'Pending'
+        paid: 'Paid'
+        cancelled: 'Cancelled'
+    type:
+        label: 'Type'
+        transfer: 'Transfer'
+        deposit: 'Deposit'
+        withdraw: 'Withdrawal'
+
+line-attachment:
+    label: 'Attachment(s)'
+    file:
+        label: 'File'
+
+recurrent-line:
+    label: 'Recurring transaction(s)'
+    action:
+        stop: 'Stop recurrence'
+    linkLineToRecurrentLine:
+        title: 'Link a transaction'
+        action: 'Link an existing transaction'
+        flash: 'Transaction linked successfully'
+    create:
+        title: 'Creating a recurring transaction'
+    edit:
+        title: 'Modifying recurring transaction #%id%'
+    view:
+        title: 'Viewing recurring transaction #%id%'
+    name:
+        label: 'Recurring transaction name'
+    useNameAsDescription:
+        label: 'Use name as description'
+    startingDate:
+        label: 'Start date'
+    type:
+        label: 'Recurrence type'
+    createdLines:
+        label: 'Transaction(s) created by recurrence'
+    notification:
+        create: 'Your recurring transaction "%s" has just been created (%s).'
+        stopped: 'Your recurring transaction "%s" has just been stopped.'
+
+statistics:
+    label: 'Statistic(s)'
+    view:
+        title: 'View statistics'
+    title:
+        amountByCategories: 'Total amount by category'
+        totalAmountByTypeLine: 'Total by transaction type'
+    type:
+        monthly: 'Monthly'
+        yearly: 'Yearly'
+        daily: 'Daily'
+        weekly: 'Weekly'
+    date:
+        label: 'Date'
+
+security:
+    login:
+        label: 'Login'
+        sign_in: 'Sign in'
+        sign_in_catch_phrase: 'to access the application'
+        action: 'Login'
+
+log:
+    label: 'Activity log'
+    view:
+        title: 'Viewing activity #%id%'
+    action:
+        label: 'Action'
+        all: 'All actions'
+        create: 'Creation'
+        update: 'Edit'
+        remove: 'Deletion'
+    object:
+        label: 'Object'
+    object_id:
+        label: 'Object ID'
+    at:
+        label: 'Logged at'
+    data:
+        label: 'Data'
+    username:
+        label: 'Username'

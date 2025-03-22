@@ -1,0 +1,102 @@
+{% trans_default_domain 'app' %}
+{% set currentRoute = app.request.attributes.get('_route') %}
+
+<div class="leftside-menu menuitem-active">
+
+    <!-- Brand Logo Light -->
+    <a href="{{ path('admin_dashboard') }}" class="logo logo-light pt-4">
+        <span class="logo-lg">
+            <img class="p-0" src="{{ asset('/build/static/images/logo/logo.svg') }}" style="height: 60px" alt="logo">
+        </span>
+        <span class="logo-sm">
+            <img src="{{ asset('/build/static/images/logo/icon.svg') }}" alt="small logo">
+        </span>
+    </a>
+
+    <!-- Brand Logo Dark -->
+    <a href="{{ path('admin_dashboard') }}" class="logo logo-dark pt-4">
+        <span class="logo-lg">
+            <img class="p-0" src="{{ asset('/build/static/images/logo/logo-dark.svg') }}" style="height: 60px" alt="logo">
+        </span>
+        <span class="logo-sm">
+            <img src="{{ asset('/build/static/images/logo/icon-dark.svg') }}" alt="small logo">
+        </span>
+    </a>
+
+    <!-- Sidebar Hover Menu Toggle Button -->
+    <div class="button-sm-hover" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Show Full Sidebar" data-bs-original-title="Show Full Sidebar">
+        <i class="ri-checkbox-blank-circle-line align-middle"></i>
+    </div>
+
+    <!-- Full Sidebar Menu Close Button -->
+    <div class="button-close-fullsidebar">
+        <i class="ri-close-fill align-middle"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="h-100 show simplebar-scrollable-y" id="leftside-menu-container" data-simplebar="init">
+        <div class="simplebar-wrapper" style="margin: 0px;">
+            <div class="simplebar-height-auto-observer-wrapper">
+                <div class="simplebar-height-auto-observer"></div>
+            </div>
+            <div class="simplebar-mask">
+                <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                    <div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                        <div class="simplebar-content" style="padding: 0px;">
+{#                            <!-- Leftbar User -->#}
+{#                            <div class="leftbar-user">#}
+{#                                <a href="pages-profile.html">#}
+{#                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow-sm">#}
+{#                                    <span class="leftbar-user-name mt-2">Dominic Keller</span>#}
+{#                                </a>#}
+{#                            </div>#}
+
+                            <!--- Sidemenu -->
+                            <ul class="side-nav">
+
+                                <twig:nav:section-title
+                                    trans="sidebar.categories.navigation"
+                                    role="{{ constant('App\\Enum\\User\\Role::ROLE_ADMIN') }}"
+                                />
+
+                                <twig:nav:item-single
+                                    path="admin_dashboard"
+                                    trans="dashboard.label"
+                                    icon="mdi mdi-home-city"
+                                    href="{{ path('admin_dashboard') }}"
+                                    role="{{ constant('App\\Enum\\User\\Role::ROLE_ADMIN') }}"
+                                />
+
+                                <twig:nav:item-single
+                                    path="admin_user"
+                                    trans="user.label"
+                                    icon="ri-user-3-line"
+                                    href="{{ path('admin_user_list') }}"
+                                    role="{{ constant('App\\Enum\\User\\Role::ROLE_ADMIN') }}"
+                                />
+
+                                <div class="help-box text-white text-center">
+                                    <h5 class="mt-1">{{ 'title.all'|trans }}</h5>
+                                    <p class="mb-0">V{{ project_version }}</p>
+                                    <p class="mt-0 mb-1"> Made by
+                                        <a class="text-reset" href="https://romainmillan.fr/">Romain M.</a>
+                                    </p>
+                                </div>
+
+                            </ul>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="simplebar-placeholder" style="width: 260px; height: 1875px;"></div>
+        </div>
+        <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+            <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+        </div>
+        <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+            <div class="simplebar-scrollbar" style="height: 716px; transform: translate3d(0px, 192px, 0px); display: block;"></div>
+        </div>
+    </div>
+</div>

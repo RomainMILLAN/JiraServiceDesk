@@ -1,0 +1,15 @@
+{% trans_default_domain 'app' %}
+{% set sort = app.request.get('_sort') %}
+{% set current_dir = sort == property ? 'asc' : (sort == '-' ~ property ? 'desc' : null) %}
+{% set new_sort = (current_dir == 'asc') ? '-' ~ property : property %}
+
+{% set query_parameters = app.request.query.all %}
+{% set query_parameters = query_parameters|merge({ '_sort': new_sort }) %}
+{% set updated_url = path(app.request.attributes.get('_route'), query_parameters|merge(app.request.attributes.get('_route_params'))) %}
+
+<a href="{{ updated_url }}">
+    {{ label }}
+    {% if current_dir is not null %}
+        <i class="mdi mdi-sort-{{ current_dir }}ending"></i>
+    {% endif %}
+</a>

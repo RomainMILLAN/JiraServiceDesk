@@ -1,0 +1,67 @@
+.scrollable {
+    overflow: auto;
+
+    /* width */
+    &::-webkit-scrollbar {
+        width: 5px;
+        min-height: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background-color: unset;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            background-color: lightgrey;
+        }
+    }
+}
+
+span.close-icon {
+    position: absolute;
+    font-size: 20px;
+    line-height: 38px;
+    right: 3rem;
+    top: 0;
+    z-index: 5;
+    color: var(--#{$prefix}secondary);
+}
+
+.check-list {
+    $iconSize: 1.8rem;
+
+    &-item {
+        line-height: 1.5rem;
+    }
+
+    &-icon {
+        vertical-align: middle;
+        font-size: $iconSize;
+
+        &:before {
+            font-size: $iconSize;
+        }
+    }
+}
+
+.table .action-icon {
+    @media (max-width: 1610px) {
+        display: block;
+    }
+}
+
+.car-logo, .service-logo {
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+.hover-success {
+    background-color: $success-bg-subtle;
+}
+.hover-success:hover {
+    background-color: $success-bg-subtle;
+}

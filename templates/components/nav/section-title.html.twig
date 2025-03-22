@@ -1,0 +1,5 @@
+{% trans_default_domain 'app' %}
+
+{% if is_granted(role) %}
+    <li class="side-nav-title">{{ trans|trans }}</li>
+{% endif %}

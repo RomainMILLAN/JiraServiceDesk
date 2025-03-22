@@ -1,0 +1,43 @@
+.ts-dropdown {
+    z-index: 2000;
+    background-color: white;
+}
+
+.ts-dropdown > * {
+    z-index: 2000;
+}
+
+select[readonly] {
+    & + .form-select {
+        pointer-events: none;
+        background-color: $form-select-disabled-bg;
+        border-color: $form-select-disabled-border-color;
+
+        .ts-control .item {
+            color: $form-select-disabled-color;
+        }
+    }
+}
+
+.form-check:not(.form-switch) {
+    @include media-breakpoint-up(md) {
+        margin-top: 2.4rem;
+    }
+}
+
+.form-check-no-margin-top {
+    .form-check {
+        margin-top: 0;
+    }
+}
+
+
+//.#{$select-ns}-dropdown,
+//.#{$select-ns}-control,
+//.#{$select-ns}-control input {
+//    color: unset;
+//}
+
+.table-action {
+    width: 150px !important;
+}

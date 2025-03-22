@@ -1,0 +1,31 @@
+{% trans_default_domain 'app' %}
+{% props cancelLink = '#', form = null %}
+
+<div class="row">
+    <div class="col">
+        {{ form_start(form) }}
+
+        <div class="card">
+            {% block header '' %}
+
+            <div class="card-body">
+                {% block content '' %}
+
+                <hr>
+
+                <div class="row justify-content-end">
+                    <div class="col-md-6 col-md-offset-3 d-flex flex-row justify-content-end">
+                        <a class="btn btn-outline-danger me-2" href="{{ cancelLink }}">
+                            {{ 'action.cancel'|trans }}
+                        </a>
+                        <button class="btn btn-success" type="submit">
+                            {{ 'action.save'|trans }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+</div>

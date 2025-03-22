@@ -1,0 +1,97 @@
+action:
+    label: 'Action(s)'
+    logout: 'Déconnexion'
+    create: 'Créer'
+    cancel: 'Annuler'
+    save: 'Enregistrer'
+    list: 'Liste'
+    exit: 'Quitter'
+    edit: 'Éditer'
+    exitImpersonation: "Arrêter l'impersonation"
+    view: 'Visualisation'
+    add: 'Ajouter'
+    remove: 'Supprimer'
+    download: 'Télécharger'
+
+locale:
+    label: 'Langue'
+    fr: 'Français'
+    en: 'Anglais'
+    
+theme:
+    label: 'Theme de couleur'
+    light: 'Clair'
+    dark: 'Sombre'
+    auto: 'Automatique'
+
+flash:
+    edited: "L'élément a été modifié avec succès."
+    created: "L'élément a été créé avec succès."
+    deleted: "L'élément a été supprimé avec succès."
+    stopped: "L'élément a été stoppé avec succès."
+    error: "Une erreur est survenue."
+
+header:
+    themeMode: 'Mode de couleur'
+    dropdown:
+        welcome: 'Bonjour !'
+
+title:
+    all: 'Jira Service Desk'
+    short: 'ServiceDesk'
+
+list:
+    pagination:
+        previous: 'Précédent'
+        next: 'Suivant'
+        empty: "Oups, nous n'avons pas trouvé d'éléments."
+        total: '%number% Résultat(s)'
+    filter:
+        action: 'Filtrer'
+
+modal:
+    delete:
+        title: 'Suppression'
+        description: "En cliquant sur ce bouton, vous acceptez de supprimer l'élément sélectionné."
+        action: 'Valider'
+
+sidebar:
+    categories:
+        navigation: 'Navigation'
+        administration: 'Administration'
+
+filter:
+    query:
+        label: 'Rechercher'
+
+dashboard:
+    label: 'Tableau de bord'
+    welcome: 'Bonjour %name% !'
+
+
+user:
+    label: 'Utilisateur(s)'
+    email:
+        label: 'Identifiant'
+    password:
+        label: 'Mot de passe'
+        notice: '💡 Laissez vide pour ne pas changer.'
+    firstName:
+        label: 'Prénom'
+    lastName:
+        label: 'Nom'
+    roles:
+        label: 'Rôle(s)'
+        role_admin: 'Administrateur'
+        role_user: 'Utilisateur'
+    preferedLocale:
+        label: 'Langue préférée'
+    preferedTheme:
+        label: 'Theme de couleur préférée'
+
+security:
+    login:
+        label: 'Connexion'
+        sign_in: 'Connectez-vous'
+        sign_in_catch_phrase: "pour accéder à l'application"
+        action: 'Se connecter'

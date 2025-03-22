@@ -1,0 +1,29 @@
+html:not([data-layout="topnav"]) {
+  &[data-sidenav-size="condensed"] {
+    .leftside-menu {
+      .logo img {
+        padding: unset;
+      }
+    }
+  }
+
+  .leftside-menu {
+    .logo img {
+      width: 80%;
+      padding: 2rem;
+    }
+  }
+}
+
+.navbar-custom .topbar {
+  &__buttons {
+    .btn i {
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+    }
+  }
+  .topbar-menu {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,13 @@
+{% trans_default_domain 'app' %}
+
+<a type="button" class="action-icon bg-transparent text-danger me-2" data-bs-toggle="modal" data-bs-target="#danger-alert-modal-{{ id }}">
+    <i class="mdi mdi-trash-can"></i>
+</a>
+
+{% include 'components/modal/danger.html.twig' with {
+  'id': id,
+  'title': 'modal.delete.title'|trans,
+  'description': 'modal.delete.description'|trans,
+  'button_label': 'modal.delete.action'|trans,
+  'button_link': button_link
+} %}

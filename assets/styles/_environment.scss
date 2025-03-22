@@ -1,0 +1,28 @@
+.rmf-env {
+  &-dev {
+    .rmf-header {
+      background-color: #94ff97;
+
+      &-menu-button::after {
+        content: '[DEVELOPMENT]';
+      }
+    }
+  }
+  &-staging {
+    .rmf-header {
+      background-color: #ff8d8d;
+
+      &-menu-button::after {
+        content: '[STAGING]';
+      }
+    }
+  }
+
+}
+
+.rmf-header-menu-button::after {
+  padding: 0;
+  margin: 0 0 0 1em;
+  font-size: 1.15rem;
+  font-weight: bold;
+}

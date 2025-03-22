@@ -1,0 +1,21 @@
+{% extends 'admin/user/base.html.twig' %}
+
+{% trans_default_domain 'app' %}
+
+{% block pageTitle 'user.create.title'|trans() %}
+{% set breadcrumb = [
+    {
+        label: 'action.create',
+    }
+] %}
+
+{% block content %}
+    <twig:form
+        form="{{ form }}"
+        cancelLink="{{ path('admin_user_list') }}"
+    >
+        <twig:block name="content">
+            {% include 'admin/user/_form_content.html.twig' %}
+        </twig:block>
+    </twig:form>
+{% endblock %}

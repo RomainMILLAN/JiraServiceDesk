@@ -1,0 +1,37 @@
+{% extends 'bootstrap_5_layout.html.twig' %}
+
+{% block quill_widget %}
+  {% apply spaceless %}
+    <div {{ stimulus_controller('quill', {toolbar: toolbarOptions}) }} data-id="{{ id }}">
+      <div {{ stimulus_target('quill', 'editor') }}>
+        {{ value|raw }}
+      </div>
+      <input type="hidden" {{ block('widget_attributes') }}
+             value="{{ value }}" {{ stimulus_target('quill', 'input') }}/>
+    </div>
+  {% endapply %}
+{% endblock quill_widget %}
+
+{% block _query_widget %}
+  <div class="input-group" {{ stimulus_controller('search-query', {
+    'emptyQueryOnly': app.request.query.all is empty,
+  }) }}>
+    {{ form_widget(form, {attr: {
+      'data-action': 'search-query#change',
+      'data-search-query-target': 'queryInput',
+    }}) }}
+    <a href="{{ current_path() }}"
+      {{ stimulus_action('search-query', 'empty') }}
+      {{ stimulus_target('search-query', 'cancelLink') }}
+    >
+      <span class="mdi mdi-close close-icon"></span>
+    </a>
+    <button class="input-group-text btn btn-primary" type="submit">
+      <span class="mdi mdi-magnify"></span>
+    </button>
+  </div>
+{% endblock _query_widget %}
+
+{% block widget_container_attributes %}
+  {{ parent() }} class="row"
+{% endblock widget_container_attributes %}

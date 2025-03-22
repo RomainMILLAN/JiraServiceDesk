@@ -1,0 +1,23 @@
+{% set breadcrumb = breadcrumb|default([]) %}
+{% trans_default_domain 'app' %}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-light-lighten py-2 mb-0 d-flex flex-row justify-content-end">
+        <li class="breadcrumb-item{{ not breadcrumb|length ? ' active' }}" aria-current="page">
+            <a href="{{ path('admin_dashboard') }}"><i class="uil-home-alt me-1"></i> {{ 'dashboard.label'|trans }}</a>
+        </li>
+        {% for item in breadcrumb %}
+            <li class="breadcrumb-item{{ loop.last ? ' active' }}">
+                {% if loop.last %}
+                    {{ item.label|trans }}
+                {% else %}
+                    {% if item.href is defined and item.href is not null %}
+                        <a href="{{ item.href }}">{{ item.label|trans }}</a>
+                    {% else %}
+                        <a role="none">{{ item.label|trans }}</a>
+                    {% endif %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+</nav>

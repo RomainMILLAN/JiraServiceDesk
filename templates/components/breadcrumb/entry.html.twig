@@ -1,0 +1,14 @@
+{% set startWrap %}
+<li class="breadcrumb-item">
+  {% if path %}<a href="{{ path ?? '#' }}">{% endif %}
+{% endset %}
+
+{% set endWrap %}
+  {% if path %}</a>{% endif %}
+</li>
+{% endset %}
+
+{{ startWrap }}
+  {% if icon ?? false %}<i class="{{ icon }}"></i>{% endif %}
+  {{ label ?? '' }}
+{{ endWrap }}

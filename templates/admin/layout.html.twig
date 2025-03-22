@@ -1,0 +1,75 @@
+{% trans_default_domain 'app' %}
+
+<!doctype html>
+<html lang="{{ app.locale }}" data-bs-preferred-theme="{{ app.session.get('_theme') }}" class="menuitem-active">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ asset('/build/static/images/logo/favicon.ico') }}" type="image/ico">
+    <title>{% block title 'JiraServiceDesk' %} - {{ 'title.all'|trans }}</title>
+    <link rel="manifest" href="{{ asset('build/static/pwa/site.webmanifest') }}">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+
+        {% block mercure '' %}
+        {% block notifications '' %}
+    {% endblock %}
+</head>
+<body {{ stimulus_controller('theme') }} id="body">
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" {{ stimulus_controller('flash') }} id="toastsNotifications">
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                <div id="liveToast" {{ stimulus_target('flash', 'container') }} class="toast show text-bg-{{ type }}" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img src="{{ asset('/build/static/images/logo/favicon.ico') }}" class="rounded me-2" style="width: 25px" alt="RomainMILLAN">
+                        <strong class="me-auto">{{ 'title.all'|trans }}</strong>
+                        <button type="button" {{ stimulus_action('flash', 'close') }} class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        {{ message|trans }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="wrapper">
+        {% include 'layout/admin/header.html.twig' %}
+        {% include 'layout/admin/menu.html.twig' %}
+
+        <div class="content-page">
+            <div class="content">
+                <div class="container-fluid">
+
+                    {% include 'layout/admin/breadcrumb.html.twig' %}
+
+                    <div class="row mt-0">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 mb-md-0">
+                                    <h4 class="page-title">{% block pageTitle 'dashboard.label'|trans %}</h4>
+                                    <div>
+                                        {% block action '' %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            {% block content '' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+@include media-breakpoint-down(md) {
+  .stackable-table-container {
+    .table-responsive {
+      overflow: visible;
+    }
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      border-radius: 6px;
+      margin-bottom: $spacer;
+      box-shadow: 0px 4px 8px 0px #0101010d;
+      background-color: var(--ct-light-bg-subtle);
+      border: var(--ct-border-width) var(--ct-border-style) var(--ct-border-color);
+    }
+
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      position: relative;
+      padding: 7px 15px 7px 50%;
+      border-bottom: 1px solid #f4f4f4;
+    }
+
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 50%;
+      transform: translateY(-50%);
+      left: 15px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      /* Label the data */
+      content: attr(data-column);
+      color: var(--ct-table-color-state, var(--ct-table-color-type, var(--ct-table-color)));
+      font-weight: bold;
+      line-height: 1;
+      text-wrap: balance;
+    }
+  }
+}

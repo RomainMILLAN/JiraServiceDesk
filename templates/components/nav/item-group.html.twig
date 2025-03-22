@@ -1,0 +1,24 @@
+{% trans_default_domain 'app' %}
+
+{% if is_granted(role) %}
+<li class="side-nav-item {{ this.currentRoute starts with path ? 'menuitem-active' }}">
+    <a data-bs-toggle="collapse" href="#{{ this.subMenuKey }}" class="side-nav-link"
+       aria-expanded="{% if collapse %}false{% else %}true{% endif %}"
+       aria-controls="sidebarDashboards">
+        <i class="uil {{ icon }}"></i>
+        <span> {{ firstLevelTrans | trans }} </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="{{ not (this.currentRoute starts with path) ? 'collapse' }} {% if not collapse %}show{% endif %}" id="{{ this.subMenuKey }}">
+        <ul class="side-nav-second-level">
+            {% for item in secondLevel %}
+                <twig:nav:item
+                    path="{{ item.path }}"
+                    trans="{{ item.trans }}"
+                    href="{{ item.href }}"
+                />
+            {% endfor %}
+        </ul>
+    </div>
+</li>
+{% endif %}

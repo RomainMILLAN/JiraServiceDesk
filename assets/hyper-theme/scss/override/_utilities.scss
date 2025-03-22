@@ -1,0 +1,7 @@
+
+@for $i from 1 through 9 {
+  $step: $i*10;
+  .darken-#{$step} {
+    filter: brightness($i * 10%);
+  }
+}

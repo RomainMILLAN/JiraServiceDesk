@@ -1,0 +1,22 @@
+security:
+    resource:
+        path: ../src/Controller/Security
+        namespace: App\Controller\Security
+    type: attribute
+    name_prefix: security_
+
+app:
+    resource:
+        path: ../src/Controller/App
+        namespace: App\Controller\App
+    type: attribute
+    name_prefix: app_
+    prefix: app
+
+admin:
+    resource:
+        path: ../src/Controller/Admin
+        namespace: App\Controller\Admin
+    type: attribute
+    name_prefix: admin_
+    prefix: admin

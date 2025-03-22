@@ -1,0 +1,62 @@
+{% extends 'admin/user/base.html.twig' %}
+
+{% trans_default_domain 'app' %}
+
+{% block pageTitle 'user.label'|trans %}
+{% set breadcrumb = [
+    {
+        label: 'action.list',
+    }
+] %}
+
+{% block action %}
+    <a href="{{ path('admin_user_create') }}" class="btn btn-success">
+        <i class="mdi mdi-plus"></i>
+        {{ 'action.create'|trans }}
+    </a>
+{% endblock %}
+
+{% block content %}
+    <twig:list:list>
+        {% trans_default_domain 'app' %}
+
+        {% block tableTh %}
+            {% trans_default_domain 'app' %}
+
+            <th>
+                {% include 'components/list/sort-list-header.html.twig' with {
+                    'label': 'user.email.label'|trans,
+                    'property': 'email',
+                } %}
+            </th>
+            <th>
+                {% include 'components/list/sort-list-header.html.twig' with {
+                    'label': 'user.firstName.label'|trans,
+                    'property': 'firstName',
+                } %}
+            </th>
+            <th>
+                {% include 'components/list/sort-list-header.html.twig' with {
+                    'label': 'user.lastName.label'|trans,
+                    'property': 'lastName',
+                } %}
+            </th>
+            <th class="min"></th>
+        {% endblock %}
+
+        {% block tableTd %}
+            <td>{{ object.email }}</td>
+            <td>{{ object.firstName }}</td>
+            <td>{{ object.lastName }}</td>
+            <td class="d-flex flex-row" data-cancel-redirect>
+                <a class="action-icon text-secondary" href="{{ path('admin_user_edit', {id: object.id}) }}">
+                    <i class="mdi mdi-pencil"></i>
+                </a>
+
+                <a class="action-icon text-secondary" href="{{ path('admin_dashboard', {_switch_user: object.email}) }}">
+                    <i class="ri-shield-user-fill"></i>
+                </a>
+            </td>
+        {% endblock %}
+    </twig:list:list>
+{% endblock %}

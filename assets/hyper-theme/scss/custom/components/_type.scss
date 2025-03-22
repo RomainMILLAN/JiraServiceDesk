@@ -1,0 +1,9 @@
+//
+// type.scss
+//
+
+// border style
+.border-dashed {
+    --#{$prefix}border-style :dashed;
+    // border-style: dashed !important;
+}

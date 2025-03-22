@@ -1,0 +1,87 @@
+{% trans_default_domain 'app' %}
+
+<div class="row">
+    <div class="col-12">
+        {% block formFilter %}
+            {% if filterForm is defined and filterForm is not none %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        {{ form_start(filterForm, {attr: {
+                            class: 'row form-inline',
+                        }}) }}
+                        <div class="row">
+                            {% block filterFormRows '' %}
+
+                            {{ form_rest(filterForm) }}
+                            <div class="col-md-2 mb-3">
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="ri-search-line"></i>
+                                        {{ 'list.filter.action'|trans }}
+                                    </button>
+                                    <a title="Reset" href="{{ filterFormResetPath }}" class="btn btn-light">
+                                        <i class="mdi mdi-window-close"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {{ form_end(filterForm) }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock %}
+
+        <div class="card">
+            {% block cardHeader '' %}
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        {% block tableActions '' %}
+                    </div>
+
+                    {% if pagination.count == 0 %}
+                        <div class="alert alert-warning text-center" role="alert">
+                            {{ 'list.pagination.empty'|trans }}
+                        </div>
+                    {% else %}
+                        <table id="table-crud" class="table table-centered table-striped">
+                            <thead>
+                            <tr>
+                                {% block tableTh '' %}
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for object in pagination.currentPageResults %}
+                                <tr>
+                                    {% block tableTd '' %}
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                        {% block pagination %}
+                            <div class="d-flex flex-column flex-md-row justify-content-start justify-content-md-between align-items-start align-items-md-center">
+                                <p class="mb-0 h-25">
+                                    {% if pagination.count == 0 %}
+                                        {{ 'list.pagination.empty'|trans }}
+                                    {% else %}
+                                        {{ 'list.pagination.total'|trans({'%number%': pagination.count}) }}
+                                    {% endif %}
+                                </p>
+
+                                <div class="pagerfanta mt-4 pagination">
+                                    {{ pagerfanta(pagination) }}
+                                </div>
+                            </div>
+                        {% endblock %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

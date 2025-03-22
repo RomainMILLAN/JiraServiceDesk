@@ -1,0 +1,7 @@
+{% trans_default_domain 'app' %}
+
+<li class="{{ this.currentRoute starts with path ? 'menuitem-active' }}">
+    <a href="{{ href }}">
+        {{ trans | trans }}
+    </a>
+</li>

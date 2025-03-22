@@ -1,0 +1,18 @@
+@import '_override.scss';
+@import '_environment.scss';
+@import 'common/buttons.scss';
+
+.button-no-style {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.a-clear {
+    color: inherit;
+    text-underline: none;
+}

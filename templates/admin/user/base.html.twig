@@ -1,0 +1,7 @@
+{% trans_default_domain 'app' %}
+{% extends 'admin/layout.html.twig' %}
+
+{% set breadcrumb = [{
+    href: path('admin_user_list'),
+    label: 'user.label'|trans,
+}]|merge(breadcrumb|default([])) %}
