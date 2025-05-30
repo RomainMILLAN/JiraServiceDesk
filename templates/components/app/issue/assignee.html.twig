@@ -1,6 +1,11 @@
 {% trans_default_domain 'app' %}
+{% props reporter = null, reporterName = null %}
 
-{% if reporter is not null %}
+{% if reporterName is not null %}
+    <span class="align-middle">
+        {{ reporterName }}
+    </span>
+{% elseif reporter is not null %}
     <span class="align-middle">
         {% if reporter.accountId == jira_account_id %}
             {{ app.user.fullName }}

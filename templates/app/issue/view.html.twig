@@ -71,7 +71,11 @@
                     </div>
 
                     {% for comment in comments|reverse %}
-                        {% if comment.visibility is null %}
+                    <twig:app:issue:comment
+                        comment="{{comment}}"
+                    >
+                    </twig:app:issue:comment>
+                        {# {% if comment.visibility is null %}
                             {% set avatarUrl = attribute(comment.author.avatarUrls, "48x48") %}
                             <div class="d-flex mt-3 mb-2">
                                 <div class="w-100">
@@ -87,7 +91,7 @@
                                     <br>
                                 </div>
                             </div>
-                        {% endif %}
+                        {% endif %} #}
                     {% endfor %}
 
                 </div>

@@ -60,7 +60,7 @@ class CreateCommentHandler
             ;
         }
         $commentDocumentBody = $commentDocumentBody
-            ->text('-------')
+            ->text('—')
             ->break()
             ->text($command->user->fullName)
             ->end()

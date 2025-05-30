@@ -1,0 +1,26 @@
+
+{% if comment.visibility is null %}
+    {% set commentParseAuthor = comment|parse_comment_author %}
+
+    <div class="d-flex mt-3 mb-2">
+        <div class="w-100">
+            <h5 class="mt-0">
+                {% if commentParseAuthor is not null %}
+                    <twig:app:issue:assignee
+                        reporterName="{{ commentParseAuthor|raw }}"
+                    />
+                {% else %} 
+                    <twig:app:issue:assignee
+                        reporter="{{ comment.author }}"
+                    />                   
+                {% endif %}
+
+                <small class="text-muted float-end">{{ comment.updated|date('d/m/Y H:i') }}</small>
+            </h5>
+            {{ comment.renderedBody|preview_attachment|raw }}
+
+            <br>
+        </div>
+    </div>
+
+{% endif %}

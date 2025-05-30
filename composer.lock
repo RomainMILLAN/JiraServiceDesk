@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30db22b83138a5e1455ff07b95649280",
+    "content-hash": "9d4bebb55898a36387bf2ee5fef6c95c",
     "packages": [
         {
             "name": "babdev/pagerfanta-bundle",
@@ -12684,16 +12684,16 @@
         },
         {
             "name": "symplify/coding-standard",
-            "version": "12.4.2",
+            "version": "12.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/coding-standard.git",
-                "reference": "e5a509319100fae418ff6b4b93f84e35196efd71"
+                "reference": "cd26aac22be7b757b492a7cc44824a447a03f4eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/coding-standard/zipball/e5a509319100fae418ff6b4b93f84e35196efd71",
-                "reference": "e5a509319100fae418ff6b4b93f84e35196efd71",
+                "url": "https://api.github.com/repos/symplify/coding-standard/zipball/cd26aac22be7b757b492a7cc44824a447a03f4eb",
+                "reference": "cd26aac22be7b757b492a7cc44824a447a03f4eb",
                 "shasum": ""
             },
             "require": {
@@ -12725,7 +12725,7 @@
             "description": "Set of Symplify rules for PHP_CodeSniffer and PHP CS Fixer.",
             "support": {
                 "issues": "https://github.com/symplify/coding-standard/issues",
-                "source": "https://github.com/symplify/coding-standard/tree/12.4.2"
+                "source": "https://github.com/symplify/coding-standard/tree/12.4.3"
             },
             "funding": [
                 {
@@ -12737,20 +12737,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-13T14:34:01+00:00"
+            "time": "2025-05-18T07:59:44+00:00"
         },
         {
             "name": "symplify/easy-coding-standard",
-            "version": "12.5.18",
+            "version": "12.5.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-coding-standard/easy-coding-standard.git",
-                "reference": "451dfeba3770f2d7476468b891a789c451ae4b34"
+                "reference": "bb44b0fc70dd2148d8a6362bc66a35e23dc31bc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-coding-standard/easy-coding-standard/zipball/451dfeba3770f2d7476468b891a789c451ae4b34",
-                "reference": "451dfeba3770f2d7476468b891a789c451ae4b34",
+                "url": "https://api.github.com/repos/easy-coding-standard/easy-coding-standard/zipball/bb44b0fc70dd2148d8a6362bc66a35e23dc31bc4",
+                "reference": "bb44b0fc70dd2148d8a6362bc66a35e23dc31bc4",
                 "shasum": ""
             },
             "require": {
@@ -12786,7 +12786,7 @@
             ],
             "support": {
                 "issues": "https://github.com/easy-coding-standard/easy-coding-standard/issues",
-                "source": "https://github.com/easy-coding-standard/easy-coding-standard/tree/12.5.18"
+                "source": "https://github.com/easy-coding-standard/easy-coding-standard/tree/12.5.20"
             },
             "funding": [
                 {
@@ -12798,7 +12798,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-14T09:38:08+00:00"
+            "time": "2025-05-30T11:42:07+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -12911,16 +12911,16 @@
         },
         {
             "name": "zenstruck/foundry",
-            "version": "v2.5.2",
+            "version": "v2.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zenstruck/foundry.git",
-                "reference": "da07fe4bba8e1391ec41cdb29b1523a9f5bfd4cd"
+                "reference": "1f82cfa1b21542dbc2e7b811f5a32d52aa7c9476"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zenstruck/foundry/zipball/da07fe4bba8e1391ec41cdb29b1523a9f5bfd4cd",
-                "reference": "da07fe4bba8e1391ec41cdb29b1523a9f5bfd4cd",
+                "url": "https://api.github.com/repos/zenstruck/foundry/zipball/1f82cfa1b21542dbc2e7b811f5a32d52aa7c9476",
+                "reference": "1f82cfa1b21542dbc2e7b811f5a32d52aa7c9476",
                 "shasum": ""
             },
             "require": {
@@ -13009,7 +13009,7 @@
             ],
             "support": {
                 "issues": "https://github.com/zenstruck/foundry/issues",
-                "source": "https://github.com/zenstruck/foundry/tree/v2.5.2"
+                "source": "https://github.com/zenstruck/foundry/tree/v2.5.3"
             },
             "funding": [
                 {
@@ -13017,7 +13017,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-26T11:56:41+00:00"
+            "time": "2025-05-30T09:30:16+00:00"
         }
     ],
     "aliases": [],

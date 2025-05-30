@@ -51,7 +51,7 @@ class ViewController extends AbstractController
             $keyProject = $issue->fields->project->key;
         }
 
-        $project = $keyProject !== null ? $this->handle(new GetProjectByJiraKey(jiraKey: $keyProject)) : null;
+        $project = $this->handle(new GetProjectByJiraKey(jiraKey: $keyProject));
         if ($project !== null) {
             $this->denyAccessUnlessGranted(ProjectVoter::PROJECT_ACCESS, $project);
         }
@@ -73,7 +73,6 @@ class ViewController extends AbstractController
                 ],
             );
         }
-
 
         return $this->render(
             view: 'app/issue/view.html.twig',

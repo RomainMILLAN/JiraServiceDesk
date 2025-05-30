@@ -38,7 +38,30 @@ export default class extends Controller {
 
           ['clean']                                         // remove formatting button
         ],
-      }
+      },
+      formats:  [
+        'background',
+        'bold',
+        'color',
+        'font',
+        'code',
+        'italic',
+        'link',
+        'size',
+        'strike',
+        'script',
+        'underline',
+        'blockquote',
+        'header',
+        'indent',
+        'list',
+        'align',
+        'direction',
+        'code-block',
+        'formula'
+        // 'image'
+        // 'video'
+      ]
     });
 
     quillEditor.on('text-change', (): void => {
