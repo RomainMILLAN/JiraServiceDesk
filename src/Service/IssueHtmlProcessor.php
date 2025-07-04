@@ -58,10 +58,15 @@ readonly class IssueHtmlProcessor
                 $issueNumber = $matches[3];          // e.g., 96
                 $issueKey = $projectKey . '-' . $issueNumber;
 
+                $focusedCommentId = null;
+                if (preg_match('#focusedCommentId=(\d+)#', $href, $commentIds)) {
+                    $focusedCommentId = $commentIds[1];
+                }
+
                 // Generate custom route like /jira/issue/MMGS/MMGS-96
-                $newUrl = $this->router->generate('app_project_issue_view', [
-                    'key' => $projectKey,
+                $newUrl = $this->router->generate('browse_issue', [
                     'keyIssue' => $issueKey,
+                    'focusedCommentId' => $focusedCommentId,
                 ]);
 
                 $link->setAttribute('href', $newUrl);
