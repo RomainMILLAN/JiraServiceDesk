@@ -35,6 +35,13 @@ theme:
     dark: "Sombre"
     auto: "Automatique"
 
+log:
+    action:
+        create: "Création"
+        update: "Mise à jour"
+        delete: "Suppression"
+        read: "Lecture"
+
 flash:
     edited: "Modification enregistrée avec succès"
     created: "Création effectuée avec succès"

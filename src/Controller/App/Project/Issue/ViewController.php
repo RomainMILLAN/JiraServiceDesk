@@ -9,7 +9,7 @@ use App\Entity\User;
 use App\Form\App\Issue\IssueCommentFormType;
 use App\Message\Command\App\Issue\CreateComment;
 use App\Message\Query\App\Issue\GetFullIssue;
-use App\Repository\Jira\IssueRepository;
+use App\Repository\Contracts\Jira\IssueRepositoryInterface;
 use App\Service\IssueHtmlProcessor;
 use JiraCloud\JiraException;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
@@ -28,7 +28,7 @@ class ViewController extends AbstractController
     use GetControllerTrait;
 
     public function __construct(
-        private IssueRepository $jiraIssueRepository,
+        private IssueRepositoryInterface $jiraIssueRepository,
         private IssueHtmlProcessor $htmlProcessor,
     ) {
     }

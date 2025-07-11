@@ -2,6 +2,7 @@
 
 namespace App\Repository\Jira;
 
+use App\Repository\Contracts\Jira\IssueRepositoryInterface;
 use JiraCloud\Issue\Attachment;
 use JiraCloud\Issue\Comment;
 use JiraCloud\Issue\Comments;
@@ -10,8 +11,10 @@ use JiraCloud\Issue\IssueField;
 use JiraCloud\Issue\IssueService;
 use JiraCloud\Issue\Transition;
 use JiraCloud\JiraException;
+use Symfony\Component\DependencyInjection\Attribute\AsAlias;
 
-class IssueRepository
+#[AsAlias(id: IssueRepositoryInterface::class)]
+class IssueRepository implements IssueRepositoryInterface
 {
     private IssueService $service;
 

@@ -5,7 +5,7 @@ namespace App\Message\Command\App\Issue\Handler;
 use App\Controller\Common\CreateControllerTrait;
 use App\Message\Command\App\Issue\AddAttachment;
 use App\Message\Command\App\Issue\CreateComment;
-use App\Repository\Jira\IssueRepository;
+use App\Repository\Contracts\Jira\IssueRepositoryInterface;
 use DH\Adf\Node\Block\Document;
 use JiraCloud\Issue\Attachment;
 use JiraCloud\Issue\Comment;
@@ -18,7 +18,7 @@ class CreateCommentHandler
     use CreateControllerTrait;
 
     public function __construct(
-        private readonly IssueRepository $issueRepository,
+        private readonly IssueRepositoryInterface $issueRepository,
     ) {
     }
 
