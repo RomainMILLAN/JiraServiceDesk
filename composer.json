@@ -13,6 +13,7 @@
         "ext-iconv": "*",
         "babdev/pagerfanta-bundle": "^4.5",
         "cweagans/composer-patches": "^1.7.3",
+        "damienharper/auditor-bundle": "^6.2",
         "doctrine/dbal": "^4.3.0",
         "doctrine/doctrine-bundle": "^2.15.0",
         "doctrine/doctrine-migrations-bundle": "^3.4.2",
@@ -91,7 +92,8 @@
     },
     "scripts": {
         "auto-scripts": {
-            "cache:clear": "symfony-cmd"
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"

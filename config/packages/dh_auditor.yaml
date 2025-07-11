@@ -1,0 +1,18 @@
+# Full configuration reference available at:
+# https://damienharper.github.io/auditor-docs/docs/auditor-bundle/configuration/reference.html
+dh_auditor:
+    enabled: true
+    providers:
+        doctrine:
+            table_prefix: '_audit_'
+            table_suffix: ''
+            viewer: true
+            ignored_columns:
+                - createdAt
+                - updatedAt
+            entities:
+                App\Entity\Favorite: ~
+                App\Entity\IssueType: ~
+                App\Entity\Priority: ~
+                App\Entity\Project: ~
+                App\Entity\User: ~
