@@ -1,5 +1,6 @@
 {% extends 'app/project/base.html.twig' %}
 {% trans_default_domain 'app' %}
+{% set query_parameters = app.request.query.all %}
 
 {% block pageTitle 'project.board.label'|trans ~ ' ' ~ entity.name %}
 {% set breadcrumb = [
@@ -41,9 +42,10 @@
 {% block content %}
 
     <div class="row">
+        {% set query_parameters = query_parameters|merge(app.request.attributes.get('_route_params')) %}
         <twig:Turbo:Frame
             id="project_board_view"
-            src="{{ path('app_project_board_view_stream', {'key': entity.jiraKey, 'idBoard': boardId}) }}"
+            src="{{ path('app_project_board_view_stream', query_parameters) }}"
         >
             <div class="board">
 

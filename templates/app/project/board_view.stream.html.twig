@@ -6,6 +6,15 @@
     {% for columnName , columnValues in kanbanIssues %}
         {% set columnsNames = columnsNames|merge([columnName|lower|u.ascii|u.replace(' ', '-')]) %}
     {% endfor %}
+    {% set query_parameters = app.request.query.all %}
+    <div>
+        {% for assignee in assignees %}
+            {% set query_parameters = query_parameters|merge({assignee: assignee.accountId})|merge(app.request.attributes.get('_route_params')) %}
+            <a href="{{ path('app_project_board_view', query_parameters) }}">
+                <img title="{{ assignee.displayName }}" src="{{ assignee.avatarUrls|first }}" alt="user-img" class="avatar-xs rounded-circle me-1">
+            </a>
+        {% endfor %}
+    </div>
 
     <div class="board">
         {% for columnName , columnValues in kanbanIssues %}

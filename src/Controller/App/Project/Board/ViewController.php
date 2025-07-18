@@ -6,6 +6,7 @@ use App\Controller\App\Project\AbstractController;
 use App\Controller\Common\GetControllerTrait;
 use App\Entity\Project;
 use App\Message\Query\App\Project\GetKanbanIssueByBoardId;
+use App\Repository\Jira\UserRepository;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,6 +21,11 @@ use Symfony\UX\Turbo\TurboBundle;
 class ViewController extends AbstractController
 {
     use GetControllerTrait;
+
+    public function __construct(
+        private UserRepository $userRepository,
+    ) {
+    }
 
     #[Route(
         path: '/',
@@ -58,9 +64,14 @@ class ViewController extends AbstractController
         Request $request,
     ): Response {
         $this->setCurrentProject($project);
+        $assignees = [];
+        $assigneesIds = $this->userRepository->getAssignableUser($project);
+        foreach ($assigneesIds as $assigneesId) {
+            $assignees[$assigneesId->accountId] = $this->userRepository->getUserById($assigneesId->accountId);
+        }
         $request->setRequestFormat(TurboBundle::STREAM_FORMAT);
         $kanbanIssuesFormatted = $this->handle(
-            new GetKanbanIssueByBoardId($project, $idBoard),
+            new GetKanbanIssueByBoardId($project, $idBoard, $request->get('assignee', '')),
         );
 
         return $this->render(
@@ -69,6 +80,7 @@ class ViewController extends AbstractController
                 'entity' => $project,
                 'boardId' => $idBoard,
                 'kanbanIssues' => $kanbanIssuesFormatted,
+                'assignees' => $assignees,
             ],
         );
     }
