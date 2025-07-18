@@ -40,6 +40,7 @@ readonly class GetKanbanIssueByBoardIdHandler
             ->addInExpression(JqlQuery::FIELD_LABELS, ['from-client'])
             ->addAnyExpression('and (' . $subQuery->getQuery() . ')')
         ;
+
         if ($query->assignee !== '') {
             $jql->addInExpression('assignee', [$query->assignee]);
         }
