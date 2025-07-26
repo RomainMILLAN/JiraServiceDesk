@@ -54,7 +54,16 @@
                                     <div class="input-group input-group-merge">
                                         <input type="password" id="password" name="_password" class="form-control">
                                         <div class="input-group-text" data-password="false">
-                                            <span class="password-eye"></span>
+                                            <span class="eye-on">
+                                                <svg class="icon">
+                                                    <use xlink:href="{{ asset('assets/images/icons/eye-on.svg', 'app') }}"></use>
+                                                </svg>
+                                            </span>
+                                            <span class="eye-off">
+                                                <svg class="icon">
+                                                    <use xlink:href="{{ asset('assets/images/icons/eye-off.svg', 'app') }}"></use>
+                                                </svg>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>

@@ -9,7 +9,6 @@
     border-color: var(--#{$prefix}border-color) !important;
     border-width: $card-border-width;
     border-style: solid;
-    border-color: $card-border-color;
 }
 
 // Form elements (Color and Range)
@@ -47,25 +46,26 @@ select.form-control-sm {
 }
 
 // Show/Hide Password
-.password-eye {
+.eye-off {
+    display: none;
+}
+.eye-on {
+    display: inline-block;
+}
+.eye-on, .eye-off {
     cursor: pointer;
-
-    &:before {
-        font-family: "Material Design Icons";
-        content: "\F06D0";
-        font-style: normal;
-        font-weight: 400;
-        font-variant: normal;
-        vertical-align: middle;
-        line-height: 1.2;
-        font-size: 16px;
+    .icon {
+        fill: $black;
+        width: 1.125rem;
+        height: 1.125rem;
     }
 }
 
 .show-password {
-    .password-eye {
-        &:before {
-            content: "\F06D1";
-        }
+    .eye-off {
+        display: inline-block;
+    }
+    .eye-on {
+        display: none;
     }
 }
