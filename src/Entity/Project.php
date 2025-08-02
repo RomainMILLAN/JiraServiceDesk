@@ -57,6 +57,9 @@ class Project
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     public ?IssueType $defaultIssueType = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    public ?string $defaultAssigneeAccountId = null;
+
     public function __construct(
         string $name,
         int $jiraId,

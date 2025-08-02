@@ -33,6 +33,11 @@ readonly class EditProjectHandler
         $project->backlogStatusesIds = $command->backlogStatusesIds;
         $project->defaultIssueType = $command->defaultIssueType;
 
+        // Set default assignee.
+        if ($jiraProject->assigneeType === 'PROJECT_LEAD') {
+            $project->defaultAssigneeAccountId = $jiraProject->lead['accountId'];
+        }
+
         foreach ($project->getUsers() as $projectUser) {
             $project->removeUser($projectUser);
         }

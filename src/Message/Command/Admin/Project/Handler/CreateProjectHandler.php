@@ -44,6 +44,11 @@ readonly class CreateProjectHandler
             description: $jiraProject->description,
         );
 
+        // Set default assignee.
+        if ($jiraProject->assigneeType === 'PROJECT_LEAD') {
+            $project->defaultAssigneeAccountId = $jiraProject->lead['accountId'];
+        }
+
         foreach ($command->users as $user) {
             $project->addUser($user);
         }

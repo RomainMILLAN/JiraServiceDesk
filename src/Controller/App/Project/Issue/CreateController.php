@@ -36,12 +36,17 @@ class CreateController extends AbstractController
     ): Response {
         $this->setCurrentProject($project);
         $assignableUsers = $this->handle(new GetIssueAssignableUsers(user: $user, project: $project));
+        $assignee = 'null';
+        if (in_array($project->defaultAssigneeAccountId, $assignableUsers)) {
+            $assignee = $project->defaultAssigneeAccountId;
+        }
 
         $form = $this->createForm(
             type: CreateIssueFormType::class,
             data: new CreateIssue(
                 project: $project,
                 creator: $user,
+                assignee: $assignee,
             ),
             options: [
                 'assignees' => $assignableUsers,
