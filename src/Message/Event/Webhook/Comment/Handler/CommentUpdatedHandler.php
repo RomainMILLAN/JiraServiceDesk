@@ -72,7 +72,7 @@ class CommentUpdatedHandler implements LoggerAwareInterface
 
         foreach ($project->getUsers() as $user) {
             if (
-                $user->preferenceNotificationCommentCreated === false
+                $user->preferenceNotificationCommentUpdated === false
                 && (
                     $user->preferenceNotificationCommentOnlyOnTag == false
                     || str_contains(

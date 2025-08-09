@@ -29,7 +29,7 @@ export default class extends Controller {
       this.issueUpdatedTarget.checked = true;
       this.commentCreatedTarget.checked = true;
       this.commentUpdatedTarget.checked = true;
-      this.commentTagOnlyTarget.checked = true;
+      this.commentTagOnlyTarget.checked = false;
     }
   }
 
